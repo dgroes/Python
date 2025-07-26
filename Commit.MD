@@ -66,9 +66,74 @@ Está comparando letra por letra:
 | ----- | ----- |
 | False | True  |
 | True  | False |
-# C06:
-# C07:
-# C08:
+# C06: Lista
+Una **lista** es una estrucura de datos **integrada** (built-in) que **puede almacenar elementos de difentes tipos**:
+```py
+mi_lista = [1, "Hola", True, 3.14]
+```
+- **Es dinámica**: puede crecer o reducirse.
+- Se puede mezclar tipos de datos.
+- Se accede por índices (como en un array).
+
+**Python no tiene arrays como tal** integrados en el lenguaje base como otros lenguajes. Pero si se puede usar arrays si se importa el módulo `array`:
+```py
+import array
+mi_array = array.array('i', [1, 2, 3, 4])
+```
+- Solo permite **datos del mismo tipo** ('i' es tipo entero).
+Es más **eficiente** en memoria que una lista para  grandes cantidades de datos del mismo tipo.
+Diferencias Clave:
+
+| Característica          | Lista (`list`)         | Array (`array.array`)                    |
+| ----------------------- | ---------------------- | ---------------------------------------- |
+| Tipos de datos          | Mezclados              | Solo un tipo de dato                     |
+| Parte del núcleo Python | Sí                     | No, requiere `import array`              |
+| Flexible                | Muy flexible           | Más estricto                             |
+| Usos comunes            | Genérico, uso diario   | Eficiencia y uso técnico específico      |
+| Ejemplo de creación     | `mi_lista = [1, 2, 3]` | `mi_array = array.array('i', [1, 2, 3])` |
+# C07: Constantes
+En Python **no existen las variables constantes**, pero **hay una convención para representar constantes**. En Python, se usan **letras mayúsculas** para indicar que una variable debe ser trata como constante. por ejemplo:
+```py
+PI = 3.14159
+MAX_USERS = 100
+URL_BASE = "https://api.ejemplo.com"
+```
+💎 Estas variables **si se pueden modificar**, pero **por convención no se debería hacerlo**
+**Forzado de constantes**
+Se puede usar una herramienta más avanzada para forzar constantes como:
+- clases personalizadas
+- módulos externos como `typing.Final` (desde Python 3.8).
+Ejemplo con `Final`:
+```py
+from typing import Final
+
+PI: Final = 3.14159
+PI = 3  # Esto lanzaría una advertencia en linters, pero Python lo permite igual en tiempo de ejecución.
+```  
+# C08: Tuplas
+Una **tupla** en Python es una colección **ordenada** e **inmutable** de elementos. Similar a una **lista**, pero con diferencia:
+| Característica      | Lista (`list`)                | Tupla (`tuple`)                              |
+| ------------------- | ----------------------------- | -------------------------------------------- |
+| Sintaxis            | `[1, 2, 3]`                   | `(1, 2, 3)`                                  |
+| Mutabilidad         | ✅ **Mutable** (puede cambiar) | ❌ **Inmutable** (no puede cambiar)           |
+| Rendimiento         | Más lenta                     | Más rápida                                   |
+| Uso típico          | Datos que cambian             | Datos fijos (como coordenadas, fechas, etc.) |
+| Métodos disponibles | Muchos (como `.append()`)     | Muy pocos (`.count()`, `.index()`)           |
+
+Un ejemplo en código sería
+```py
+# Lista
+lista = [1, 2, 3]
+lista.append(4)  # ✅ Se puede modificar
+
+# Tupla
+tupla = (1, 2, 3)
+# tupla.append(4)  ❌ Error: las tuplas no se pueden modificar
+```
+Una tupla entonces debería ser una opción cuando:
+- Cuando **no se quiere que los datos se modifiquen**.
+- Cuando se necesita **más eficiencia** (las tuplas consumen menos memoria).
+- Cuando los datos son **semánticamente constantes** (como (latitud, longitud)).
 # C09:
 # C010:
 # C011:
