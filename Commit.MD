@@ -134,6 +134,35 @@ Una tupla entonces debería ser una opción cuando:
 - Cuando **no se quiere que los datos se modifiquen**.
 - Cuando se necesita **más eficiencia** (las tuplas consumen menos memoria).
 - Cuando los datos son **semánticamente constantes** (como (latitud, longitud)).
-# C09:
+# C09: Sets
+En Python, un `set` (conjunto) es una **colección desordenada, sin elementos duplicados y mutable** (se puede cambiar después de ser creada)
+| Característica                    | Detalles                                                                   |
+| --------------------------------- | -------------------------------------------------------------------------- |
+| ✅ Elementos únicos                | No permite duplicados. `{1, 2, 2, 3}` → `{1, 2, 3}`                        |
+| ❌ No ordenado                     | No garantiza orden al imprimirlo o recorrerlo                              |
+| ✅ Mutable                         | Puedes agregar o eliminar elementos con métodos como `.add()`, `.remove()` |
+| ❌ No indexable                    | No puedes acceder con índices como `mi_set[0]`                             |
+| ✅ Permite operaciones de conjunto | unión, intersección, diferencia, etc.                                      |
+Un ejemplo en código seria:
+```py
+my_set = {1, 2, 3, 4}
+print(my_set)  # {1, 2, 3, 4}
+
+my_set.add(5)
+print(my_set)  # {1, 2, 3, 4, 5}
+
+my_set.add(3)
+print(my_set)  # {1, 2, 3, 4, 5} → 3 ya existía, no se repite
+```
+Algunas operaciones entres sets:
+```py
+a = {1, 2, 3}
+b = {3, 4, 5}
+
+print(a | b)  # Unión → {1, 2, 3, 4, 5}
+print(a & b)  # Intersección → {3}
+print(a - b)  # Diferencia → {1, 2}
+print(a ^ b)  # Diferencia simétrica → {1, 2, 4, 5}
+```
 # C010:
 # C011:
