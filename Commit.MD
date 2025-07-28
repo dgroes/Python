@@ -164,5 +164,78 @@ print(a & b)  # Intersección → {3}
 print(a - b)  # Diferencia → {1, 2}
 print(a ^ b)  # Diferencia simétrica → {1, 2, 4, 5}
 ```
-# C010:
-# C011:
+s
+# C010: Diccionario
+Un diccionario es una **colección de datos no ordenada y mutable** que **almacena pares clave-valor**.
+```py
+persona = {
+    "nombre": "Diego",
+    "edad": 30,
+    "pais": "Chile"
+}
+```
+- `"nombre"`, `"edad"`, `"pais"` son las claves (keys).
+- `"Diego"`, `30`, `"Chile"` son los valores (values).
+Entonces se pude acceder de esta forma:
+```py
+print(persona["nombre"])  # -> Diego
+```
+Una diferencia clave con otros conjunto de elementos son sus indices. Solo se puden **acceder a los indices a travez de su clave**. por ejemplo:
+```py
+frutas = {
+    "roja": "manzana",
+    "amarilla": "banana",
+    "verde": "pera"
+}
+print(frutas["amarilla"])  # "banana"
+```
+pero si trato de acceder a manzaja de esta forma daría un error:
+```py
+print(frutas[0])  # "banana"
+```
+Para **acceder a dicho elemento solo sirve su clave**
+## Diferencia con un set
+Un set es una **colección no ordenada**, **sin elementos duplicados**. Se usa, por ejemplo para eliminar duplicados:
+```py
+mi_set = {1, 2, 3, 3, 4}
+print(mi_set)  # -> {1, 2, 3, 4}
+```
+Tanto `set` como `dict` utilizan llaves (`{}`) como delimitadores, pero son estruccuras distintas:
+| Característica | Diccionario (`dict`)     | Conjunto (`set`)            |
+| -------------- | ------------------------ | --------------------------- |
+| Sintaxis       | `{clave: valor}`         | `{elemento, elemento}`      |
+| Tipo de datos  | Pares clave-valor        | Valores únicos              |
+| Acceso         | Por clave (`dic['key']`) | No admite acceso por índice |
+| Ejemplo        | `{"nombre": "Diego"}`    | `{1, 2, 3}`                 |
+s
+# C011: dict.fromkeys()
+El método `dic.fromkeys()` lo que hace es crear un nuevo diccionario usando: 
+- **Una secuencia de claves**
+- Un **valor común para todas esas claves**
+```py
+claves = ["Matemáticas", "Física", "Lenguaje"]
+notas = dict.fromkeys(claves, 0)
+
+print(notas)
+# {'Matemáticas': 0, 'Física': 0, 'Lenguaje': 0}
+```
+s
+# C012:
+# C013:
+# C014:
+# C015:
+# C016:
+# C017:
+# C018:
+# C019:
+# C020:
+# C021:
+# C022:
+# C023:
+# C024:
+# C025:
+# C026:
+# C027:
+# C028:
+# C029:
+# C030:
