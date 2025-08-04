@@ -220,7 +220,27 @@ print(notas)
 # {'Matemáticas': 0, 'Física': 0, 'Lenguaje': 0}
 ```
 s
-# C012:
+# C012: Bucle While (else)
+El bucle `while` es similar que en muchos lenguajes, en Python tiene una particularidad, usando un `else`. El cual dicha condición será **cuando se recorra todo el bucle sin haber caido en un `break` previo**. Por ejemplo:
+```py
+n = 0
+
+while n < 5:
+    print(n)
+    n += 1
+else:
+    print("El while terminó normalmente")
+#Su salida:
+""" 
+0
+1
+2
+3
+4
+El while terminó normalmente
+"""
+```
+s
 # C013:
 # C014:
 # C015:
