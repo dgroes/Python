@@ -241,9 +241,67 @@ El while terminó normalmente
 """
 ```
 s
-# C013:
-# C014:
-# C015:
+# C013: Continue
+`continue` lo que hace es **saltar el resto del código en la iteración actual** y pasa directamente a la siguiente vuelta del `for` o `while`.
+```py
+for name in ["Arya", "Jon", "Sansa"]:
+    if name == "Jon":
+        continue  # Salta este y pasa al siguiente
+    print(name)
+
+# Resultado:
+Arya
+Sansa
+```
+El `continue` no es tan usado y necesario, pero sirve para **evitar estrucuras anidadas** y hacer el **código más limpio si se tiene muchas condiciones**. 
+En la practica no se utiliza tanto, incluso en ocaciones se prefiere evitarlo para mantener el flujo de control más explícito. Entonce sería útil cuando se tiene muchas condiciones y se quere evitar anidar `if`s. Por ejemplo un ejemplo en el cual sería bueno emplearlo sería:
+```py
+for user in users:
+    if not user.is_active:
+        continue
+    if user.role != "admin":
+        continue
+
+    # solo admin activos llegan aquí
+    print(f"{user.name} tiene acceso")
+```
+# C014: Argumentos arbitrarios (args)
+En Python están los **argumentos arbitrarios** o **"args"**, se usa con asterisco `*` para capturar una **cantidad variable de argumentos posicionales** en una función:
+```py
+def print_texts(*text):
+    print(text)
+```
+Aquí se lería: Esta función **puede recibir cualquier cantidad de argumentos** y todos **serán guardados en una tupla llama** `text`.
+Ejemplo de entrada:
+```py
+print_texts("Python", "PHP", "Javascript")
+```
+Y el ejemplo de su salida:
+```py
+('Python', 'PHP', 'Javascript')
+```
+# C015: Constructor
+El **constructor** de la clase se ejecuta automáticamente **cada vez** que se crea un objeto (una instancia) de esa clase:
+```py
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+
+persona1 = Persona("Diego", 25)
+print(persona1.nombre)  # Diego
+```
+`__init__` no es obligación su uso, se puede tener una clase sin ella si no se necesita inicializar atributos al momento de crear la instancia:
+```py
+class Mascota:
+    def ladrar(self):
+        print("Guau!")
+
+perro = Mascota()
+perro.ladrar()
+```
+Pero en cuento se necestia inicializar valores personalizados, como nombre, precio, edad, dirección, color, etc. **Sí se necesitará** `__init__`
+> En otras palabras: El uso de `__init__` es **correcto y recomendable** cuando la clase necestia **inicializar atributos** al momento de crear una instancia.
 # C016:
 # C017:
 # C018:
