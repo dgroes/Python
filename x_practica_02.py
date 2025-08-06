@@ -1,0 +1,1 @@
+# Registro de compra en tienda
