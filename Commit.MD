@@ -335,8 +335,28 @@ Aquí una tabla con la compatibilidad de fechas en Python:
 | **date** ± date           | ✅ (`timedelta` como resultado)   | ✅ (`timedelta` como resultado) | ❌ `TypeError` | ➕/➖ ✅ (`date` como resultado)            |
 | **time** ± time           | ❌ `TypeError`                    | ❌ `TypeError`                  | ❌ `TypeError` | ❌ Directo (`time` no admite `timedelta`) |
 | **timedelta** ± timedelta | ✅ (`timedelta` como resultado)   | ✅ (`timedelta` como resultado) | ❌ `TypeError` | ✅ (`timedelta` como resultado)           |
+# C017: List Comprehensions
+Son una **forma corta y elegante de crar listas** nuevas aplicando una expresión a cada elemento de un iterable (como una lista, tupla o rango) y opcionalmente filtrando elementos con una condición. En vez de utilizar un bucle `for` tradicional para contruir una lista, se puede hacer en una sola línea:
+```py
+[expresión for elemento in iterable if condición]
+```
+Esta sería la estrucura básica, lo que pasa en el ejemplo sería:
+- `expresión` → Qué valor se va a colocar en la lista resultante (puede ser el elemento en sí o algo modificado).
+- `elemento` → La variable que toma cada valor del iterable.
+- `iterable` → La secuencia o colección sobre la que iteras.
+- `if condición` (opcional) → Filtro para incluir solo los elementos que cumplan la condición.
+Y ejemplo aplicable sería la creación de una lista de cuadrados:
+```py
+# Con List Comprehensions:
+cuadrados = [x**2 for x in range(5)]
+print(cuadrados)  # [0, 1, 4, 9, 16]
 
-# C017:
+# Con un for:
+cuadrados = []
+for x in range(5):
+    cuadrados.append(x**2)
+```
+s
 # C018:
 # C019:
 # C020:
