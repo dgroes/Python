@@ -302,7 +302,40 @@ perro.ladrar()
 ```
 Pero en cuento se necestia inicializar valores personalizados, como nombre, precio, edad, dirección, color, etc. **Sí se necesitará** `__init__`
 > En otras palabras: El uso de `__init__` es **correcto y recomendable** cuando la clase necestia **inicializar atributos** al momento de crear una instancia.
-# C016:
+# C016: Timedelta
+En Python, `timedelta` es una clase del módulo `datetime` que representa una **diferencia de tiempo** entra dos fechas, horas o datetimes. Sirve para trabajar con intervalos temporales (ej: "5 días y 3 horas"), en lugar de representar una fecha o una hora concreta.
+Es útil para:
+- **Sumar o restar** días, horas, minutos, etc., a una fecha.
+- **Calcular la diferencia** entre dos fechas/horas.
+- **Medir duraciones** en programas (por ejemplo, cuánto tarda en ejecutarse algo).
+- Evitar errores con cálculos manuales de fechas (meses con diferente número de días, años bisiestos, cambios de hora, etc.).
+Lo más caracteristico es que `timedelta` funciona como una "moneda común" para sumar o restar intervalos de tiempo, **pero no con todos los tipos de fecha/hora de Python indiscriminadamente**
+Un ejemplo básico sería:
+```py
+from datetime import datetime, timedelta
+
+# Fecha actual
+hoy = datetime.now()
+
+# Crear un timedelta de 5 días
+cinco_dias = timedelta(days=5)
+
+# Sumar 5 días a la fecha actual
+en_cinco_dias = hoy + cinco_dias
+print("En 5 días será:", en_cinco_dias)
+
+# Restar 5 días
+hace_cinco_dias = hoy - cinco_dias
+print("Hace 5 días fue:", hace_cinco_dias)
+```
+Aquí una tabla con la compatibilidad de fechas en Python:
+| Operación                 | datetime                         | date                           | time          | timedelta                                |
+| ------------------------- | -------------------------------- | ------------------------------ | ------------- | ---------------------------------------- |
+| **datetime** ± datetime   | ➖ ✅ (`timedelta` como resultado) | ❌ `TypeError`                  | ❌ `TypeError` | ➕/➖ ✅ (`datetime` como resultado)        |
+| **date** ± date           | ✅ (`timedelta` como resultado)   | ✅ (`timedelta` como resultado) | ❌ `TypeError` | ➕/➖ ✅ (`date` como resultado)            |
+| **time** ± time           | ❌ `TypeError`                    | ❌ `TypeError`                  | ❌ `TypeError` | ❌ Directo (`time` no admite `timedelta`) |
+| **timedelta** ± timedelta | ✅ (`timedelta` como resultado)   | ✅ (`timedelta` como resultado) | ❌ `TypeError` | ✅ (`timedelta` como resultado)           |
+
 # C017:
 # C018:
 # C019:
