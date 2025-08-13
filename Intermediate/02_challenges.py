@@ -35,6 +35,7 @@ verdadero o falso (Bool) según sean o no anagramas.
 """
 print("----------------")
 
+
 def is_anagram(first, second):
     first, second = first.lower(), second.lower()
 
@@ -45,7 +46,8 @@ def is_anagram(first, second):
     else:
         print("No es anagrama ⚠️")
 
-# Sorted ordena las lestra en una lista:: 
+
+# Sorted ordena las lestra en una lista::
 # sorted("roma") → ['a', 'm', 'o', 'r']
 # sorted("amor") → ['a', 'm', 'o', 'r']
 
@@ -63,12 +65,50 @@ de Fibonacci empezando en 0.
   0, 1, 1, 2, 3, 5, 8, 13...
 """
 
+print("----------------")
+
+
+def fibonacci():
+    prev = 0
+    next = 1
+
+    for index in range(0, 50):
+        print(f"{index}: {prev}")
+
+        fib = prev + next
+        prev = next
+        next = fib
+
+
+fibonacci()
 
 """
 ¿ES UN NÚMERO PRIMO?
 Escribe un programa que se encargue de comprobar si un número es o no primo.
 Hecho esto, imprime los números primos entre 1 y 100.
 """
+
+print("------------")
+
+
+def is_prime():
+
+    for number in range(1, 101):
+
+        if number >= 2:
+
+            is_divisible = False
+
+            for index in range(2, number):
+                if number % index == 0:
+                    is_divisible = True
+                    break
+
+            if not is_divisible:
+                print(number)
+
+
+is_prime()
 
 
 """
@@ -77,3 +117,16 @@ Crea un programa que invierta el orden de una cadena de texto
 sin usar funciones propias del lenguaje que lo hagan de forma automática.
 - Si le pasamos "Hola mundo" nos retornaría "odnum aloH"
 """
+
+print("-------------")
+
+
+def reverse_string(text):
+    text_len = len(text)
+    reverse_text = ""
+    for index in range(0, text_len):
+        reverse_text += text[text_len - index - 1]
+    return reverse_text
+
+
+print(reverse_string("Dalpo"))
