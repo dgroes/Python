@@ -357,9 +357,100 @@ for x in range(5):
     cuadrados.append(x**2)
 ```
 s
-# C018:
-# C019:
-# C020:
+# C018: Lambda
+Es una forma corta de crar una **función anónima** (sin nombre) usando la palabra clave `lambda`. Sive cuando se necesita una función rápida y simple, normalmente en una sola línea, sin la formalidad de definiarla con `def`.
+```py
+lambda argumentos: expresión
+```
+- `argumentos` → Parámetros que recibe la función.
+- `expresión` → Lo que la función devuelve (no se usa `return`, se devuelve automáticamente).
+Un ejemplo simple en su uso sería:
+```py
+# Función tradicional
+def cuadrado(x):
+    return x**2
+
+# Función lambda
+cuadrado_lambda = lambda x: x**2
+
+print(cuadrado_lambda(5))  # 25
+```
+# C019: Función de orden superior
+Es una función que:
+1. Recibe como argumento otra función
+2. O devuelve otra función como resultado
+3. (o ambas a la vez)
+En Python las funciones son **ciudadanos de primera clase** (first-class citizens), significa que se puen pasar como parametros, guardarlas en variables, retornarlas, ect., igual que otro valor.
+1. Ejmplo: Rebibir funciones como argumento:
+```py
+def aplicar(funcion, valor):
+    return funcion(valor)
+
+def cuadrado(x):
+    return x * x
+
+print(aplicar(cuadrado, 5))  # 25
+```
+Aquí `aplicar` es de orden superior porque recibe otra función (`cuadrado`) como parámetro.
+2. Ejemplo: Devolver funciones:
+```py
+def multiplicador(n):
+    def multiplicar(x):
+        return x * n
+    return multiplicar
+
+por_dos = multiplicador(2)
+print(por_dos(5))  # 10
+```
+`multiplicador` devuelve una nueva función, así que también es de orden superior.
+3. Ejemplo integrados de Python
+Muchas funciones integradas de Python son de orden superior:
+- `sorted(iterable, key=func)`
+- `filter(func, iterable)`
+- `map(func, iterable)`
+```py
+nums = [1, 2, 3, 4, 5]
+print(list(map(cuadrado, nums)))  # [1, 4, 9, 16, 25]
+```
+s
+# C020: Función Cerrada (closure)
+Es una función interna que **recuerda** y **puede acceder** a las varialbes de su función externa, incluso después de que la función externa haya terminado de ejecutarse. Es como si la función interna "llevara consigo" un pequeño paquete con las variables que tenía a su alrededor cuando fue creada.
+Para que exista una **closure** deben cumplirse 3 cosas:
+1. **Una función interna** definida dentro de otra función.
+2. **La función interna usa variables** de la función externa.
+3. **La función externa devuelve** la función interna, para que pueda ejecutarse después.
+```py
+def crear_saludador(nombre):
+    def saludar():
+        print(f"Hola, {nombre}")
+    return saludar
+
+saludo_a_aemon = crear_saludador("Aemon Targaryen")
+saludo_a_aemon()  # Hola, Aemon Targaryen
+```
+Aquí ocurre lo siguiente:
+- Cuando `crear_saludador` termina, su variables `nombre` normalmente debería desaparecer.
+- Pero como `saludar` la necesita, Python **la "captura" y la guarda** junto con la función interna.
+- Así, aunque `crear_saludador` ya acabó, `saludar` sigue recordando "`Aemon Targaryen"`
+Las **closures** son muy útiles para:
+- Crear funciones personalizadas con configuración previa (factories).
+- Evitar variables globales.
+- Encapsular datos para que no puedan modificarse desde fuera.
+```py
+def contador():
+    cuenta = 0
+    def incrementar():
+        nonlocal cuenta
+        cuenta += 1
+        return cuenta
+    return incrementar
+
+mi_contador = contador()
+print(mi_contador())  # 1
+print(mi_contador())  # 2
+print(mi_contador())  # 3
+```
+Aquí `cuenta` se mantiene entre llamadas, sin usar variables globales.
 # C021:
 # C022:
 # C023:
