@@ -1,5 +1,5 @@
 # Funcion de orden superior
-# C019: Función de orden superior
+# C19: Función de orden superior
 """
 Ejercicio 1 – Función que recibe otra función.
 
@@ -27,15 +27,14 @@ def procesar_lista(lista, funcion):
 print(procesar_lista(lista_numeros, sumar_uno))
 
 
+# Closure
+# C20: Función Cerrada (closure)
 """ 
-Ejercicio 2 – Función que devuelve otra función
-
-Crea una función llamada crear_saludador que:
+Función que devuelve otra función
+Una función llamada crear_saludador que:
 Reciba un nombre como parámetro.
-
 Devuelva una nueva función que, cuando se ejecute, imprima "Hola, <nombre>".
 """
-
 print("----------02----------")
 
 
@@ -48,3 +47,25 @@ def crear_saludador(nombre):
 
 saludo_a_aemon = crear_saludador("Aemon Targaryen")
 saludo_a_aemon()  # Hola, Aemon Targaryen
+
+print("----------03----------")
+# Built-in Higher order functions
+# C21: Built-in Higher Order Functions
+
+# Map
+def multiply_two(number):
+    return number * 2
+
+
+numbers = [2, 3, 5, 8]
+
+print(list(map(multiply_two, numbers)))
+print(list(map(lambda number: number * 2, numbers))) # <- con lambda
+
+# Filter
+def is_even(x):
+    return x % 2 == 0
+
+numbers = [1, 2, 3, 4, 5, 6]
+even_numbers = filter(is_even, numbers)
+print(list(even_numbers))
