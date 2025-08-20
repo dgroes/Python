@@ -1,0 +1,14 @@
+{
+  "locations": [
+    {
+      "name": "Desembarco del Rey",
+      "region": "Corona",
+      "description": "Capital de los Siete Reinos y sede del Trono de Hierro."
+    },
+    {
+      "name": "El Muro",
+      "region": "El Norte",
+      "description": "Gigantesca muralla de hielo que separa los Siete Reinos de las tierras salvajes."
+    }
+  ]
+}

@@ -165,7 +165,7 @@ print(a - b)  # Diferencia → {1, 2}
 print(a ^ b)  # Diferencia simétrica → {1, 2, 4, 5}
 ```
 s
-# C010: Diccionario
+# C10: Diccionario
 Un diccionario es una **colección de datos no ordenada y mutable** que **almacena pares clave-valor**.
 ```py
 persona = {
@@ -208,7 +208,7 @@ Tanto `set` como `dict` utilizan llaves (`{}`) como delimitadores, pero son estr
 | Acceso         | Por clave (`dic['key']`) | No admite acceso por índice |
 | Ejemplo        | `{"nombre": "Diego"}`    | `{1, 2, 3}`                 |
 s
-# C011: dict.fromkeys()
+# C11: dict.fromkeys()
 El método `dic.fromkeys()` lo que hace es crear un nuevo diccionario usando: 
 - **Una secuencia de claves**
 - Un **valor común para todas esas claves**
@@ -220,7 +220,7 @@ print(notas)
 # {'Matemáticas': 0, 'Física': 0, 'Lenguaje': 0}
 ```
 s
-# C012: Bucle While (else)
+# C12: Bucle While (else)
 El bucle `while` es similar que en muchos lenguajes, en Python tiene una particularidad, usando un `else`. El cual dicha condición será **cuando se recorra todo el bucle sin haber caido en un `break` previo**. Por ejemplo:
 ```py
 n = 0
@@ -241,7 +241,7 @@ El while terminó normalmente
 """
 ```
 s
-# C013: Continue
+# C13: Continue
 `continue` lo que hace es **saltar el resto del código en la iteración actual** y pasa directamente a la siguiente vuelta del `for` o `while`.
 ```py
 for name in ["Arya", "Jon", "Sansa"]:
@@ -265,7 +265,7 @@ for user in users:
     # solo admin activos llegan aquí
     print(f"{user.name} tiene acceso")
 ```
-# C014: Argumentos arbitrarios (args)
+# C14: Argumentos arbitrarios (args)
 En Python están los **argumentos arbitrarios** o **"args"**, se usa con asterisco `*` para capturar una **cantidad variable de argumentos posicionales** en una función:
 ```py
 def print_texts(*text):
@@ -280,7 +280,7 @@ Y el ejemplo de su salida:
 ```py
 ('Python', 'PHP', 'Javascript')
 ```
-# C015: Constructor
+# C15: Constructor
 El **constructor** de la clase se ejecuta automáticamente **cada vez** que se crea un objeto (una instancia) de esa clase:
 ```py
 class Persona:
@@ -302,7 +302,7 @@ perro.ladrar()
 ```
 Pero en cuento se necestia inicializar valores personalizados, como nombre, precio, edad, dirección, color, etc. **Sí se necesitará** `__init__`
 > En otras palabras: El uso de `__init__` es **correcto y recomendable** cuando la clase necestia **inicializar atributos** al momento de crear una instancia.
-# C016: Timedelta
+# C16: Timedelta
 En Python, `timedelta` es una clase del módulo `datetime` que representa una **diferencia de tiempo** entra dos fechas, horas o datetimes. Sirve para trabajar con intervalos temporales (ej: "5 días y 3 horas"), en lugar de representar una fecha o una hora concreta.
 Es útil para:
 - **Sumar o restar** días, horas, minutos, etc., a una fecha.
@@ -335,7 +335,7 @@ Aquí una tabla con la compatibilidad de fechas en Python:
 | **date** ± date           | ✅ (`timedelta` como resultado)   | ✅ (`timedelta` como resultado) | ❌ `TypeError` | ➕/➖ ✅ (`date` como resultado)            |
 | **time** ± time           | ❌ `TypeError`                    | ❌ `TypeError`                  | ❌ `TypeError` | ❌ Directo (`time` no admite `timedelta`) |
 | **timedelta** ± timedelta | ✅ (`timedelta` como resultado)   | ✅ (`timedelta` como resultado) | ❌ `TypeError` | ✅ (`timedelta` como resultado)           |
-# C017: List Comprehensions
+# C17: List Comprehensions
 Son una **forma corta y elegante de crar listas** nuevas aplicando una expresión a cada elemento de un iterable (como una lista, tupla o rango) y opcionalmente filtrando elementos con una condición. En vez de utilizar un bucle `for` tradicional para contruir una lista, se puede hacer en una sola línea:
 ```py
 [expresión for elemento in iterable if condición]
@@ -357,7 +357,7 @@ for x in range(5):
     cuadrados.append(x**2)
 ```
 s
-# C018: Lambda
+# C18: Lambda
 Es una forma corta de crar una **función anónima** (sin nombre) usando la palabra clave `lambda`. Sive cuando se necesita una función rápida y simple, normalmente en una sola línea, sin la formalidad de definiarla con `def`.
 ```py
 lambda argumentos: expresión
@@ -375,7 +375,7 @@ cuadrado_lambda = lambda x: x**2
 
 print(cuadrado_lambda(5))  # 25
 ```
-# C019: Función de orden superior
+# C19: Función de orden superior
 Es una función que:
 1. Recibe como argumento otra función
 2. O devuelve otra función como resultado
@@ -413,7 +413,7 @@ nums = [1, 2, 3, 4, 5]
 print(list(map(cuadrado, nums)))  # [1, 4, 9, 16, 25]
 ```
 s
-# C020: Función Cerrada (closure)
+# C20: Función Cerrada (closure)
 Es una función interna que **recuerda** y **puede acceder** a las varialbes de su función externa, incluso después de que la función externa haya terminado de ejecutarse. Es como si la función interna "llevara consigo" un pequeño paquete con las variables que tenía a su alrededor cuando fue creada.
 Para que exista una **closure** deben cumplirse 3 cosas:
 1. **Una función interna** definida dentro de otra función.
@@ -451,13 +451,53 @@ print(mi_contador())  # 2
 print(mi_contador())  # 3
 ```
 Aquí `cuenta` se mantiene entre llamadas, sin usar variables globales.
-# C021:
-# C022:
-# C023:
-# C024:
-# C025:
-# C026:
-# C027:
-# C028:
-# C029:
-# C030:
+# C21: Built-in Higher Order Functions
+Como se mencionó en *C19* están las **funciones de orden superior que ya vienen incluidas en el propio lenguaje** (las que trae en propio Python "de fabricaa", sin necesidad de importarlas).
+Entonces una función de orden superior es una **funcion que recibe otra función como argumento** o **Deveulve otra función**.
+Un ejemplo de built-in higher order functions:
+- `map(func, iterable` Aquí aplica un función a cada elemento
+```py
+nums = [1, 2, 3, 4]
+cuadrados = list(map(lambda x: x**2, nums))
+print(cuadrados)  # [1, 4, 9, 16]
+```
+- `filter(func, iterable)` Filtra elementos que cumplen una condición.
+```py
+pares = list(filter(lambda x: x % 2 == 0, nums))
+print(pares)  # [2, 4]
+```
+s
+# C22: with + file
+En Python cuando se trabaje con ficheros lo recomendable es siempre usar `with`.
+Con `witch` se obtienen las siguientes ventajas:
+- **Cierre automático del archivo**: No se necesita llamar a `close()`, Python lo hace por el usuario.
+- **Manejo seguro de errores**: Si ocurre una excepción dentro del bloque, el archivo igualemnte se cierra.
+- **Código más limpio y legible**: Menos líneas y más fácil de leer
+Algunos ejemplos prácticos serían:
+**Lectura:**
+```py
+with open("datos.txt", "r") as f:
+    contenido = f.read()
+```
+**Escritura:**
+```py
+with open("salida.txt", "w") as f:
+    f.write("Guardando información...\n")
+```
+**Copia de archivos (lectura + escritura):**
+```py
+with open("origen.txt", "r") as f_in, open("destino.txt", "w") as f_out:
+    for linea in f_in:
+        f_out.write(linea)
+```
+Hay casos en que no es necesario `with`, esto sería solo en situaciones muy especificas, por ejemplo:
+- si se quiere **mantener un archivo abierto mucho tiempo** (ejemplo: un log que va a escribir línea por línea durante toda la ejecución).
+- Si se **necesita abrir/cerrar manualmente en diferentes momentos** y no todo en un mismo bloque
+# C23:
+# C24:
+# C25:
+# C26:
+# C27:
+# C28:
+# C29:
+# C30:
