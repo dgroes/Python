@@ -1,0 +1,31 @@
+Titulo: League of Legends, Genero: MOBA, Precio: 0.0, Stock: 100
+Titulo: Fortnite, Genero: Battle Royale, Precio: 0.0, Stock: 100
+Titulo: Apex Legends, Genero: Battle Royale, Precio: 0.0, Stock: 100
+Titulo: Genshin Impact, Genero: RPG, Precio: 0.0, Stock: 100
+Titulo: Valorant, Genero: FPS, Precio: 0.0, Stock: 100
+Titulo: League of Legends, Genero: MOBA, Precio: 0.0, Stock: 100
+Titulo: Fortnite, Genero: Battle Royale, Precio: 0.0, Stock: 100
+Titulo: Apex Legends, Genero: Battle Royale, Precio: 0.0, Stock: 100
+Titulo: Genshin Impact, Genero: RPG, Precio: 0.0, Stock: 100
+Titulo: Valorant, Genero: FPS, Precio: 0.0, Stock: 100
+Titulo: League of Legends, Genero: MOBA, Precio: 0.0, Stock: 100
+Titulo: Fortnite, Genero: Battle Royale, Precio: 0.0, Stock: 100
+Titulo: Apex Legends, Genero: Battle Royale, Precio: 0.0, Stock: 100
+Titulo: Genshin Impact, Genero: RPG, Precio: 0.0, Stock: 100
+Titulo: Valorant, Genero: FPS, Precio: 0.0, Stock: 100
+Titulo: League of Legends, Genero: MOBA, Precio: 0.0, Stock: 100
+Titulo: Fortnite, Genero: Battle Royale, Precio: 0.0, Stock: 100
+Titulo: Apex Legends, Genero: Battle Royale, Precio: 0.0, Stock: 100
+Titulo: Genshin Impact, Genero: RPG, Precio: 0.0, Stock: 100
+Titulo: Valorant, Genero: FPS, Precio: 0.0, Stock: 100
+Titulo: League of Legends, Genero: MOBA, Precio: 0.0, Stock: 100
+Titulo: Fortnite, Genero: Battle Royale, Precio: 0.0, Stock: 100
+Titulo: Apex Legends, Genero: Battle Royale, Precio: 0.0, Stock: 100
+Titulo: Genshin Impact, Genero: RPG, Precio: 0.0, Stock: 100
+Titulo: Valorant, Genero: FPS, Precio: 0.0, Stock: 100
+Titulo: League of Legends, Genero: MOBA, Precio: 0.0, Stock: 100
+Titulo: Fortnite, Genero: Battle Royale, Precio: 0.0, Stock: 100
+Titulo: Apex Legends, Genero: Battle Royale, Precio: 0.0, Stock: 100
+Titulo: Genshin Impact, Genero: RPG, Precio: 0.0, Stock: 100
+Titulo: Valorant, Genero: FPS, Precio: 0.0, Stock: 100
+Titulo: League of Legends, Genero: MOBA, Precio: 0.0, Stock: 100

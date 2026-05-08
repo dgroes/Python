@@ -1,0 +1,22 @@
+Titulo: The Legend of Zelda: Breath of the Wild, Genero: Aventura, Precio: 59.99, Stock: 10 
+Titulo: Super Mario Odyssey, Genero: Plataformas, Precio: 49.99, Stock: 15 
+Titulo: Red Dead Redemption 2, Genero: Acción, Precio: 39.99, Stock: 5 
+Titulo: The Witcher 3: Wild Hunt, Genero: RPG, Precio: 29.99, Stock: 8 
+Titulo: Minecraft, Genero: Sandbox, Precio: 19.99, Stock: 20 
+Titulo: Fortnite, Genero: Battle Royale, Precio: 0.0, Stock: 100 
+Titulo: Call of Duty: Modern Warfare, Genero: FPS, Precio: 59.99, Stock: 12 
+Titulo: Among Us, Genero: Multijugador, Precio: 4.99, Stock: 50 
+Titulo: Cyberpunk 2077, Genero: RPG, Precio: 49.99, Stock: 7 
+Titulo: Animal Crossing: New Horizons, Genero: Simulación, Precio: 59.99, Stock: 18 
+Titulo: Hades, Genero: Roguelike, Precio: 24.99, Stock: 10 
+Titulo: Apex Legends, Genero: Battle Royale, Precio: 0.0, Stock: 100 
+Titulo: Genshin Impact, Genero: RPG, Precio: 0.0, Stock: 100 
+Titulo: Valorant, Genero: FPS, Precio: 0.0, Stock: 100 
+Titulo: League of Legends, Genero: MOBA, Precio: 0.0, Stock: 100 
+Titulo: Overwatch, Genero: FPS, Precio: 39.99, Stock: 15 
+Titulo: Doom Eternal, Genero: FPS, Precio: 59.99, Stock: 8 
+Titulo: The Elder Scrolls V: Skyrim, Genero: RPG, Precio: 29.99, Stock: 10 
+Titulo: Grand Theft Auto V, Genero: Acción, Precio: 29.99, Stock: 20 
+Titulo: Dark Souls III, Genero: RPG, Precio: 49.99, Stock: 5 
+
+Titulo: Terraria, Genero: Aventura, Precio: 9.99, Stock: 12
