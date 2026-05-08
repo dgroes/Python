@@ -493,9 +493,36 @@ with open("origen.txt", "r") as f_in, open("destino.txt", "w") as f_out:
 Hay casos en que no es necesario `with`, esto sería solo en situaciones muy especificas, por ejemplo:
 - si se quiere **mantener un archivo abierto mucho tiempo** (ejemplo: un log que va a escribir línea por línea durante toda la ejecución).
 - Si se **necesita abrir/cerrar manualmente en diferentes momentos** y no todo en un mismo bloque
-# C23:
-# C24:
-# C25:
+# C23: Regular expressions
+La **expresiones regulares** (regular expressions o regex) en Python son una forma muy poderosa de buscar extraer o manipular **patrones de texto** dentro de strings. 
+Es similar a pensar en ellas como una especie de "mini busqueda" que permite decirle a Python:
+- *“Encuentra todas las palabras que empiecen con mayúscula”*,
+- *“Verifica si este correo tiene el formato correcto”*,
+- *“Reemplaza todos los números de un texto por X”*.
+Las regex se usan con el módulo incorporado `re`
+```py
+import re
+```
+Un ejemplo baso de uso sería buscar un patrón de un texto:
+```py
+import re
+
+texto = "Mi número es 12345"
+patron = r"\d+"   # \d significa "números", + significa "uno o más"
+resultado = re.search(patron, texto)
+
+print(resultado.group())  # 12345
+```
+# C24: Conexión a SQL (pyodbc)
+En python se pueden hacer conexiones a distintas DBs de manera sencilla. Aquí se hace una conexión a SQL básico. Dentro de python hay 3 alternativas que son las más usadas:
+- sqlite3: SQLite integrado
+- pyodbc: Conexión SQL clásica
+- SQLAlchemy: ORM / abstracción
+*pyodbc* es una biblioteca (módulo) de código abierto para Python que **permite conectar aplicaciones Python a casi cualquier base de datos que utilice el estándar ODBC (Open Database Connectivity)**. Facilita la ejecución de consultas SQL, la recuperación de resultados y la gestión de transacciones con sistemas como SQL Server, Oracle, MySQL y PostgreSQL.
+# C25: C25 raw string
+En python puede ocurrir que cuando se utilize el simbolo de slash (/) en un string, python lo interprete cómo si fuera un comando, cómo puede ser: "/n", para evitar eso se puede utilizar "raw string".
+Añadiendo la letra "r" al inicio, esto indicará que no se interprete un escape:
+`r"SERVER=LAPTOP-QJ6643FR\DALPO;"`.
 # C26:
 # C27:
 # C28:
