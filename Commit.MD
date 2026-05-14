@@ -523,7 +523,8 @@ En python se pueden hacer conexiones a distintas DBs de manera sencilla. Aquí s
 En python puede ocurrir que cuando se utilize el simbolo de slash (/) en un string, python lo interprete cómo si fuera un comando, cómo puede ser: "/n", para evitar eso se puede utilizar "raw string".
 Añadiendo la letra "r" al inicio, esto indicará que no se interprete un escape:
 `r"SERVER=LAPTOP-QJ6643FR\DALPO;"`.
-# C26:
+# C26: Reduce
+La función `reduce()`, pertenece al modulo `functools`, aplica una función de manera acumulativa a los elementos de un iterable (como una lista), de izquierda a derecha, para condensarlos e un único valor. Distinto de `map()` o `filter()`. `reduce()` toma dos argumentos -Una función y un iterable- para procesar pares de elementos secuencialmente.
 # C27:
 # C28:
 # C29:

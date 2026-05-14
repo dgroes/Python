@@ -1,5 +1,7 @@
 # Funcion de orden superior
 # C19: Función de orden superior
+from functools import reduce
+
 """
 Ejercicio 1 – Función que recibe otra función.
 
@@ -69,3 +71,12 @@ def is_even(x):
 numbers = [1, 2, 3, 4, 5, 6]
 even_numbers = filter(is_even, numbers)
 print(list(even_numbers))
+
+print(f"\n ***Reduce***")
+
+# C26: Reduce
+# Reduce 
+def sum_two_values(first, second):
+    return first + second
+
+print(reduce(sum_two_values, numbers))
